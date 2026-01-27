@@ -175,8 +175,9 @@ UPROGS=\
 
 fs.img: mkfs README $(UPROGS)
 	./mkfs fs.img README $(UPROGS)
-
+sh.o: CFLAGS += -Wno-error=infinite-recursion -Wno-infinite-recursion
 -include *.d
+
 
 clean: 
 	rm -f *.tex *.dvi *.idx *.aux *.log *.ind *.ilg \
